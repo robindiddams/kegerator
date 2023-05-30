@@ -1,6 +1,0 @@
-# Global settings applied to the whole site.  
-
-[build]
-  base    = "frontend"
-  publish = "frontend/build"
-  command = "yarn build"
