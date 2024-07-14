@@ -62,11 +62,10 @@
         <div><div class="emoji shake-slow shake-constant">🍺</div></div>
         <div>
           <div class="title shake-slow shake-constant">
-            ROBIN'S KEGERATOR IS OFFLINE
-          </div>
-          <div hx-get="/api/temp" hx-trigger="load">
-            Get Some HTML
-          </div>
+            Current Beer Temperature
+          <div hx-get="/api/temp" hx-trigger="load" hx-target="#temp"></div>
+          <div class="title" id="temp">Fetching....</div>
+        </div>
         </div>
       </div>
     </div>
