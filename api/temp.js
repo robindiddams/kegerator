@@ -14,7 +14,7 @@ export default async function handler(request, response) {
       return response.status(401).send('Unauthorized');
     }
 
-    await kv.put('temp', request.body.temp);
+    await kv.set('temp', request.body.temp);
     return response.status(200).send('OK');
   }
 
