@@ -4,6 +4,9 @@ export default async function handler(request, response) {
   // if method is Get then return the value of temp
   if (request.method === 'GET') {
     const temp = await kv.get('temp');
+    if (!temp) {
+      return response.status(404).send("Kegerator temperature not found!");
+    }
     return response.status(200).send(temp + '°C');
   }
 
