@@ -20,6 +20,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="https://unpkg.com/htmx.org@2.0.1" integrity="sha384-QWGpdj554B4ETpJJC9z+ZHJcA/i59TyjxEPXiiUgN2WmTyV5OEZWCD6gQhgkdpB/" crossorigin="anonymous"></script>
     <style>
       body {
         margin: 0;
@@ -61,7 +62,8 @@
         <div><div class="emoji shake-slow shake-constant">🍺</div></div>
         <div>
           <div class="title shake-slow shake-constant">
-            ROBIN'S KEGERATOR IS OFFLINE
+            <div hx-get="/api/temp" hx-trigger="load" hx-target="#temp"></div>
+            <div class="title" id="temp">Fetching....</div>
           </div>
         </div>
       </div>
