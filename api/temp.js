@@ -13,10 +13,8 @@ export default async function handler(request, response) {
     if (request.headers['x-api-key'] !== process.env.API_KEY) {
       return response.status(401).send('Unauthorized');
     }
-    console.log(request.body);
 
-    const body = JSON.parse(request.body);
-    await kv.put('temp', body.temp);
+    await kv.put('temp', request.body.temp);
     return response.status(200).send('OK');
   }
 
